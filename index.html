@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+        *{
+            margin: 0 0;
+            padding: 0 0 ;
+
+        }
+        body{
+            background-color: rgb(253 52 176 / 70%);
+         
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        #container{
+            height: 500px;
+            width: 500px;
+            
+            animation: nash 4s infinite ease ;
+            
+             position: absolute;
+             left: 700px;
+             top: 70px;
+
+            
+        }
+        @keyframes nash {
+            0%{
+                transform: scale(1);
+            }
+            20%{
+                transform: scale(1.115);
+            }
+        }
+        h1{
+            
+            display: inline-block;
+            height: 300px;
+            width: 500px;
+            padding: 20px;
+            background-color: transparent;
+            text-align: center;
+            line-height: 100px;
+            color: white;
+          
+            
+        }
+        #button{
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            border: none;
+            padding: 10px;
+            font-size: 20px;
+          color: white;
+            background-color: rgb(247 27 200);
+            margin-left: 200px;
+
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <h1 id="nash"></h1><br>
+    <input type="button" value="click &#x221E "  id="button">
+   <div id="container"></div> 
+
+
+</body>
+<script>
+    const ifa=["Happy Birthday to you 💗 9lpa ...treat","Always smile like that😀","some days some memories are remarkable 😍 ","I used to see this image whenever I want to laugh😜","Peace😌","I have just remember we laughed  alot after coming back😂🤣 ","😏How flexible🤩 ","lets frame together and forever😈"];
+    const photo=["i1.jpeg","i2.jpeg","i3.jpeg","i4.jpeg","i5.jpeg","i6.jpeg","i7.jpeg","i8.jpeg"]
+    const button=document.getElementById("button");
+    const nash=document.getElementById("nash");
+    const container=document.getElementById("container");
+    const sound=new Audio('https://cdn.pixabay.com/download/audio/2021/08/23/audio_607d040239.mp3?filename=trip-to-home-relaxing-acoustic-guitar-background-music-7625.mp3')
+    var i=0;
+    sound.play();
+    button.onclick=()=>{
+        if(i!=8){
+            container.style.backgroundImage="url("+photo[i]+")";
+        container.style.backgroundRepeat="no-repeat";
+        container.style.backgroundSize="contain";
+        nash.innerHTML=ifa[i];
+        i++;
+        }
+        else{
+            i=0;
+        }
+
+    }
+</script>
+</html>
